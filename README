@@ -1,0 +1,15 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1985
+
+This is a quick and dirty vim script for automatically generating, managing, and running perl t/*.t files for any perl file you are currently editing.
+
+The idea is to give a perl developer a leg up in creating tests for new or legacy code to give some basic unit tests.  Please note that these tests are just stub tests - it is up to the developer to expand the stub tests to fully exercise the code they're testing.
+
+In a module (.pm) file, it looks for a new() constructor and adds a special test to create an object of that package, adds an isa_ok() for the created object, and every subroutine that it finds is called as an method on that object.
+
+In a normal perl file (.pl), calls all subroutines as functions in ok() calls.
+
+Also has a few extra commands for opening a quick view to the test file, creating a Makefile, which helps run your tests as well as a few extra bonuses such as running code coverage reporting, automatically opening the HTML code coverage report in a local web browser.  Please note that the last element is completely untested and not working on windows or linux - patches welcome :)
+
+Help is available after installing:  :help runtests
+
+Ideas for improvements or other suggestions welcome.
